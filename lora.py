@@ -9,7 +9,7 @@ import pytorch_warmup as warmup
 import torch.nn.functional as F
 from transformers.modeling_outputs import ImageClassifierOutput
 from loralib.utils import (
-    get_lora_parameters,
+    get_lora_parameters
 )
 
 

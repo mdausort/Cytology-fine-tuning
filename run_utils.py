@@ -39,7 +39,6 @@ def get_arguments():
     parser.add_argument("--n_iters", default=500, type=int)
     parser.add_argument("--batch_size", default=32, type=int)
 
-    #    parser.add_argument("--few_shot", default="", type=str)
     # Argument definition
     parser.add_argument(
         "--position",
@@ -50,10 +49,7 @@ def get_arguments():
     )
 
     parser.add_argument(
-        "--encoder",
-        type=str,
-        choices=["text", "vision", "both"],
-        default="both"
+        "--encoder", type=str, choices=["text", "vision", "both"], default="both"
     )
 
     parser.add_argument(
@@ -66,18 +62,10 @@ def get_arguments():
     )
 
     parser.add_argument(
-        "--r",
-        default=2,
-        type=int,
-        help="the rank of the low-rank matrices"
+        "--r", default=2, type=int, help="the rank of the low-rank matrices"
     )
 
-    parser.add_argument(
-        "--alpha",
-        default=1,
-        type=int,
-        help="scaling (see LoRA paper)"
-    )
+    parser.add_argument("--alpha", default=1, type=int, help="scaling (see LoRA paper)")
 
     parser.add_argument(
         "--dropout_rate",

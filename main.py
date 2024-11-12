@@ -190,7 +190,8 @@ def main():
 
     # Classifier experience
     run_uni(args, model_clip, logit_scale, train_loader, val_loader, test_loader)
-    #
+
+    # LoRA experience
 
 
 if __name__ == "__main__":

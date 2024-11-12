@@ -33,21 +33,21 @@ if __name__ == "__main__":
 
     if dataset == "kaggle1":
         num_classes = 4
-        root_path = "TO CHANGE"
+        root_path = "/gpfs/projects/acad/danitim/elkhoury/manon/"  # "TO CHANGE"
 
     elif dataset == "kaggle2":
         num_classes = 2
-        root_path = "TO CHANGE"
+        root_path = "/gpfs/projects/acad/danitim/elkhoury/manon/"  # "TO CHANGE"
 
     elif dataset == "sipakmed":
         num_classes = 5
-        root_path = "TO CHANGE"
+        root_path = "/gpfs/projects/acad/danitim/elkhoury/manon/"  # "TO CHANGE"
 
     elif dataset == "hicervix":
-        df = pd.read_csv("./train.csv")
+        df = pd.read_csv("/gpfs/projects/acad/danitim/elkhoury/manon/train.csv")
         class_list = np.unique(df.loc[:, level].tolist())
         num_classes = len(class_list)
-        root_path = "TO CHANGE"
+        root_path = "/gpfs/projects/acad/danitim/elkhoury/manon/"  # "TO CHANGE"
     else:
         raise RuntimeError("Wrong dataset")
 
