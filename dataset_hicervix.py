@@ -36,8 +36,8 @@ if __name__ == "__main__":
     if dataset == "hicervix":
 
         df = pd.read_csv(
-            "/gpfs/projects/acad/danitim/elkhoury/manon/train.csv"
-        )  # "TO CHANGE"
+            "path_of_dataset/train.csv"
+        )  # TO CHANGE
 
         if level == "level_3":
             class_list_2 = sorted(np.unique(df.loc[:, "level_2"].dropna().tolist()))
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
         num_classes = len(class_list)
 
-        root_path = "/gpfs/projects/acad/danitim/elkhoury/manon/"  # "TO CHANGE"
+        root_path = "path_of_dataset"  # TO CHANGE
 
     else:
         raise RuntimeError("Wrong dataset")

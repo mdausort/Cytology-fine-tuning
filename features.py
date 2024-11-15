@@ -1,6 +1,5 @@
 import os
 import torch
-import random
 import numpy as np
 from tqdm import tqdm
 from utils import get_function
@@ -22,63 +21,6 @@ class FeaturesDataset(Dataset):
         label = torch.tensor(self.labels[idx], dtype=torch.long)
 
         return feature, label
-
-
-def generate_few_shot(args, data_loader, val=False):
-
-    shot = args.shots
-
-    path = os.path.join(
-        args.root_path,
-        args.dataset
-        + "_"
-        + str(args.seed)
-        + "_"
-        + str(shot)
-        + "_"
-        + args.model_name
-        + "_features_train.npz",
-    )  # +args.shots
-    if val:
-        shot = 4
-        path = os.path.join(
-            args.root_path,
-            args.dataset
-            + "_"
-            + str(args.seed)
-            + "_"
-            + str(shot)
-            + "_"
-            + args.model_name
-            + "_features_val.npz",
-        )
-
-    dico_all = []
-
-    for i in range(args.num_classes):
-        dico = []
-        for image, label in data_loader:
-            for img, lab in zip(image, label):
-                if lab.numpy() == i:
-                    dico.append(img)
-
-        dico_all.append(dico)
-
-    features = []
-    labels = []
-
-    for classes, type_classe in enumerate(dico_all):
-        random.shuffle(type_classe)
-
-        new_list = type_classe[:shot]
-
-        features.extend(new_list)
-        labels.extend(np.ones(shot) * classes)
-
-    features = np.array(features)
-    labels = np.array(labels)
-    np.savez(path, features=features, labels=labels)
-    return
 
 
 def features_extractor(args, model, train_loader, val_loader, test_loader):

@@ -87,7 +87,7 @@ def run_uni(args, clip_model, logit_scale, train_loader, val_loader, test_loader
 
     if args.model_name in ["vit_google"]:
         num_features = 768
-    elif args.model_name in ["clip", "quilt", "biomedclip", "conch"]:
+    elif args.model_name in ["clip", "quilt", "biomedclip"]:
         num_features = 512
     elif args.model_name in ["uni"]:
         num_features = get_feature_size(clip_model, (3, 224, 224))
@@ -269,7 +269,7 @@ def run_uni_lora(args, clip_model, logit_scale, train_loader, val_loader, test_l
         clip_model_ = clip_model
     else:
         raise RuntimeError(
-            "Wrong model name used. Try clip, conch, uni, biomedclip, vit_google or quilt."
+            "Wrong model name used. Try clip, uni, biomedclip, vit_google or quilt."
         )
 
     optimizer = torch.optim.AdamW(
@@ -415,7 +415,7 @@ def run_uni_lora_percent(
         clip_model_ = clip_model
     else:
         raise RuntimeError(
-            "Wrong model name used. Try clip, conch, uni, biomedclip, vit_google or quilt."
+            "Wrong model name used. Try clip, uni, biomedclip, vit_google or quilt."
         )
 
     optimizer = torch.optim.AdamW(

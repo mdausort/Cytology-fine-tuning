@@ -89,19 +89,19 @@ if __name__ == "__main__":
 
     if dataset == "kaggle1":
         num_classes = 4
-        root_path = "path_of_the_dataset"  # TO CHANGE
+        root_path = "path_of_dataset"  # TO CHANGE
 
     elif dataset == "kaggle2":
         num_classes = 2
-        root_path = "path_of_the_dataset"  # TO CHANGE
+        root_path = "path_of_dataset"  # TO CHANGE
 
     elif dataset == "sipakmed":
         num_classes = 5
-        root_path = "path_of_the_dataset"  # TO CHANGE
+        root_path = "path_of_dataset"  # TO CHANGE
 
     elif dataset == "hicervix":
         df = pd.read_csv(
-            "path_of_the_dataset"  # TO CHANGE
+            "path_of_dataset"  # TO CHANGE
         )
 
         if level == "level_3":
