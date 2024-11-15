@@ -2,11 +2,11 @@ import os
 import timm
 import clip
 import torch
-import open_clip  # https://github.com/wisdomikezogwo/quilt1m
+import open_clip
 from datasets import build_dataset
 import torchvision.transforms as transforms
 from datasets.utils import build_data_loader
-from lora import run_uni
+from lora import run_uni, run_uni_lora, run_uni_lora_percent
 from run_utils import set_random_seed, get_arguments
 from transformers import AutoModelForImageClassification, AutoImageProcessor
 from features import (
@@ -22,7 +22,7 @@ def main():
 
     set_random_seed(args.seed)
 
-    # Models
+    # -------------------------------- Models --------------------------------
     _, preprocess = clip.load(args.backbone)
     tokenizer = None
 
@@ -65,28 +65,53 @@ def main():
     model_clip.cuda()
     logit_scale = 100
 
-    # Prepare dataset
+    # ---------------------------- Prepare dataset ----------------------------
     print("Preparing dataset.")
 
-    features_csv_train = os.path.join(
-        args.root_path, args.dataset + "_" + args.model_name + "_features_train.npz"
-    )
-    features_csv_val = os.path.join(
-        args.root_path, args.dataset + "_" + args.model_name + "_features_val.npz"
-    )
-    features_csv_test = os.path.join(
-        args.root_path, args.dataset + "_" + args.model_name + "_features_test.npz"
+    train_tranform = transforms.Compose(
+        [
+            transforms.RandomResizedCrop(
+                size=224,
+                scale=(0.08, 1),
+                interpolation=transforms.InterpolationMode.BICUBIC,
+            ),
+            transforms.RandomHorizontalFlip(p=0.5),
+            transforms.ToTensor(),
+            transforms.Normalize(
+                mean=(0.48145466, 0.4578275, 0.40821073),
+                std=(0.26862954, 0.26130258, 0.27577711),
+            ),
+        ]
     )
 
-    if (
-        not os.path.exists(features_csv_train)
-        or not os.path.exists(features_csv_val)
-        or not os.path.exists(features_csv_test)
-    ):
+    level_name = (args.level).replace("_", "")
 
-        dataset = build_dataset(
-            args.dataset, args.root_path, -1, args.level, preprocess
+    if args.task == "classifier":
+        features_csv_train = os.path.join(
+            args.root_path, args.dataset + "_" + args.model_name + "_features_train.npz"
         )
+        features_csv_val = os.path.join(
+            args.root_path, args.dataset + "_" + args.model_name + "_features_val.npz"
+        )
+        features_csv_test = os.path.join(
+            args.root_path, args.dataset + "_" + args.model_name + "_features_test.npz"
+        )
+
+        if (
+            not os.path.exists(features_csv_train)
+            or not os.path.exists(features_csv_val)
+            or not os.path.exists(features_csv_test)
+        ):
+            dataset = build_dataset(args.dataset, args.root_path, -1, args.level)
+
+        textual_csv_train = os.path.join(
+            args.root_path, args.dataset + "_" + args.model_name + "_textual_train.npz"
+        )
+
+        if not os.path.exists(textual_csv_train) and args.textual == "True":
+            dataset = build_dataset(args.dataset, args.root_path, -1, args.level)
+
+            textual_extractor(args, dataset, model_clip, tokenizer)
 
         val_loader = build_data_loader(
             data_source=dataset.val,
@@ -108,21 +133,6 @@ def main():
 
         train_loader = None
         if not args.eval_only:
-            train_tranform = transforms.Compose(
-                [
-                    transforms.RandomResizedCrop(
-                        size=224,
-                        scale=(0.08, 1),
-                        interpolation=transforms.InterpolationMode.BICUBIC,
-                    ),
-                    transforms.RandomHorizontalFlip(p=0.5),
-                    transforms.ToTensor(),
-                    transforms.Normalize(
-                        mean=(0.48145466, 0.4578275, 0.40821073),
-                        std=(0.26862954, 0.26130258, 0.27577711),
-                    ),
-                ]
-            )
 
             train_loader = build_data_loader(
                 data_source=dataset.train_x,
@@ -135,63 +145,178 @@ def main():
 
         features_extractor(args, model_clip, train_loader, val_loader, test_loader)
 
-    textual_csv_train = os.path.join(
-        args.root_path, args.dataset + "_" + args.model_name + "_textual_train.npz"
-    )
-
-    if not os.path.exists(textual_csv_train) and args.textual == "True":
-        dataset = build_dataset(
-            args.dataset, args.root_path, -1, args.level, preprocess
+        train_dataset = FeaturesDataset(
+            os.path.join(
+                args.root_path,
+                args.dataset + "_" + args.model_name + "_features_train.npz",
+            )
+        )
+        val_dataset = FeaturesDataset(
+            os.path.join(
+                args.root_path,
+                args.dataset + "_" + args.model_name + "_features_val.npz",
+            )
+        )
+        test_dataset = FeaturesDataset(
+            os.path.join(
+                args.root_path,
+                args.dataset + "_" + args.model_name + "_features_test.npz",
+            )
         )
 
-        textual_extractor(args, dataset, model_clip, tokenizer)
-
-    train_dataset = FeaturesDataset(
-        os.path.join(
-            args.root_path, args.dataset + "_" + args.model_name + "_features_train.npz"
+        train_loader = torch.utils.data.DataLoader(
+            train_dataset,
+            batch_size=args.batch_size,
+            num_workers=5,
+            shuffle=True,
+            pin_memory=True,
         )
-    )
-    val_dataset = FeaturesDataset(
-        os.path.join(
-            args.root_path, args.dataset + "_" + args.model_name + "_features_val.npz"
+
+        val_loader = torch.utils.data.DataLoader(
+            val_dataset,
+            batch_size=args.batch_size,
+            num_workers=5,
+            shuffle=True,
+            pin_memory=True,
         )
-    )
-    test_dataset = FeaturesDataset(
-        os.path.join(
-            args.root_path, args.dataset + "_" + args.model_name + "_features_test.npz"
+
+        test_loader = torch.utils.data.DataLoader(
+            test_dataset,
+            batch_size=args.batch_size,
+            num_workers=5,
+            shuffle=True,
+            pin_memory=True,
         )
-    )
 
-    train_loader = torch.utils.data.DataLoader(
-        train_dataset,
-        batch_size=args.batch_size,
-        num_workers=5,
-        shuffle=True,
-        pin_memory=True,
-    )
+    elif args.task == "lora":
 
-    val_loader = torch.utils.data.DataLoader(
-        val_dataset,
-        batch_size=args.batch_size,
-        num_workers=5,
-        shuffle=True,
-        pin_memory=True,
-    )
+        if args.dataset == "hicervix":
+            pt_path = (
+                "./"
+                + str(args.dataset)
+                + "_"
+                + str(args.seed)
+                + "_"
+                + str(args.shots)
+                + "_"
+                + str(level_name)
+                + ".pt"
+            )
 
-    test_loader = torch.utils.data.DataLoader(
-        test_dataset,
-        batch_size=args.batch_size,
-        num_workers=5,
-        shuffle=True,
-        pin_memory=True,
-    )
+            if not os.path.exists(pt_path):
+                # Doing this to save time.
+                os.system(
+                    f"python3 dataset_hicervix.py --seed_launch {args.seed} --shots_launch {args.shots} --level_launch {args.level}"
+                )
 
-    # Commente or uncommente the line needed
+            dataset = torch.load(pt_path, weights_only=False)
+        else:
+            dataset = build_dataset(args.dataset, args.root_path, args.shots)
 
-    # Classifier experience
-    run_uni(args, model_clip, logit_scale, train_loader, val_loader, test_loader)
+        val_loader = build_data_loader(
+            data_source=dataset.val,
+            batch_size=256,
+            is_train=False,
+            tfm=preprocess,
+            shuffle=False,
+            num_workers=5,
+        )
 
-    # LoRA experience
+        test_loader = build_data_loader(
+            data_source=dataset.test,
+            batch_size=256,
+            is_train=False,
+            tfm=preprocess,
+            shuffle=False,
+            num_workers=5,
+        )
+
+        train_loader = build_data_loader(
+            data_source=dataset.train_x,
+            batch_size=args.batch_size,
+            tfm=train_tranform,
+            is_train=True,
+            shuffle=True,
+            num_workers=5,
+        )
+
+    elif args.task == "percentage_lora":
+
+        assert args.percentage > 0, "The percentage should be greater than zero."
+
+        if args.dataset == "hicervix":
+            pt_path = (
+                "./"
+                + str(args.dataset)
+                + "_"
+                + str(args.seed)
+                + "_"
+                + str(args.shots)
+                + "_"
+                + str(level_name)
+                + "_"
+                + str(args.percentage)
+                + "_percent.pt"
+            )
+
+            if not os.path.exists(pt_path):
+                # Doing this to save time.
+                os.system(
+                    f"python3 dataset_hicervix.py --seed_launch {args.seed} --shots_launch {args.shots} --level_launch {args.level} --percent_launch {args.percentage}"
+                )
+
+            dataset = torch.load(pt_path, weights_only=False)
+        else:
+            print("Percentage experiment was not implemented for the other datasets.")
+
+        val_loader = build_data_loader(
+            data_source=dataset.val,
+            batch_size=256,
+            is_train=False,
+            tfm=preprocess,
+            shuffle=False,
+            num_workers=5,
+        )
+
+        test_loader = build_data_loader(
+            data_source=dataset.test,
+            batch_size=256,
+            is_train=False,
+            tfm=preprocess,
+            shuffle=False,
+            num_workers=5,
+        )
+
+        train_loader = build_data_loader(
+            data_source=dataset.train_x,
+            batch_size=args.batch_size,
+            tfm=train_tranform,
+            is_train=True,
+            shuffle=True,
+            num_workers=5,
+        )
+
+    else:
+        print("We are in the wrong situation")
+
+    # Classifier experiment
+    if args.task == "classifier":
+        run_uni(args, model_clip, logit_scale, train_loader, val_loader, test_loader)
+
+    # LoRA experiment
+    elif args.task == "lora":
+        run_uni_lora(
+            args, model_clip, logit_scale, train_loader, val_loader, test_loader
+        )
+
+    # Percentage - LoRA experiment
+    elif args.task == "percentage_lora":
+        run_uni_lora_percent(
+            args, model_clip, logit_scale, train_loader, val_loader, test_loader
+        )
+
+    else:
+        print("Wrong task name")
 
 
 if __name__ == "__main__":

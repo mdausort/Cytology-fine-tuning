@@ -28,19 +28,11 @@ def get_function(model_name, clip_model, tokenizer=None):
 
     elif model_name == "uni":
 
-        MODEL_NAME = {
-            "vision": clip_model,
-            "text": None,
-            "token": None
-        }
+        MODEL_NAME = {"vision": clip_model, "text": None, "token": None}
 
     elif model_name == "vit_google":
 
-        MODEL_NAME = {
-            "vision": clip_model,
-            "text": None,
-            "token": None
-        }
+        MODEL_NAME = {"vision": clip_model, "text": None, "token": None}
 
     return MODEL_NAME["vision"], MODEL_NAME["text"], MODEL_NAME["token"]
 

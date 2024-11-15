@@ -1,4 +1,3 @@
-
 from .ucf101 import UCF101
 from .sun397 import SUN397
 from .eurosat import EuroSAT
@@ -34,7 +33,9 @@ dataset_list = {
 }
 
 
-def build_dataset(dataset, root_path, shots, level, pourcentage, preprocess):
+def build_dataset(
+    dataset, root_path, shots, level="level_1", pourcentage=0.0, preprocess=None
+):
     if dataset == "imagenet":
         return dataset_list[dataset](root_path, shots, preprocess)
     elif dataset == "hicervix":

@@ -279,8 +279,8 @@ def save_lora(args, list_lora_layers):
         if "q" in args.params:
             if args.model_name == "vit_google":
                 layer_weights["q_proj"] = {
-                "w_lora_A": layer.w_lora_A.data,
-                "w_lora_B": layer.w_lora_B.data,
+                    "w_lora_A": layer.w_lora_A.data,
+                    "w_lora_B": layer.w_lora_B.data,
                 }
             else:
                 layer_weights["q_proj"] = {
@@ -290,8 +290,8 @@ def save_lora(args, list_lora_layers):
         if "k" in args.params:
             if args.model_name == "vit_google":
                 layer_weights["k_proj"] = {
-                "w_lora_A": layer.w_lora_A.data,
-                "w_lora_B": layer.w_lora_B.data,
+                    "w_lora_A": layer.w_lora_A.data,
+                    "w_lora_B": layer.w_lora_B.data,
                 }
             else:
                 layer_weights["k_proj"] = {
@@ -301,15 +301,15 @@ def save_lora(args, list_lora_layers):
         if "v" in args.params:
             if args.model_name == "vit_google":
                 layer_weights["v_proj"] = {
-                "w_lora_A": layer.w_lora_A.data,
-                "w_lora_B": layer.w_lora_B.data,
+                    "w_lora_A": layer.w_lora_A.data,
+                    "w_lora_B": layer.w_lora_B.data,
                 }
             else:
                 layer_weights["v_proj"] = {
                     "w_lora_A": layer.v_proj.w_lora_A.data,
                     "w_lora_B": layer.v_proj.w_lora_B.data,
                 }
-            
+
         if "o" in args.params:
             layer_weights["proj"] = {
                 "w_lora_A": layer.proj.w_lora_A.data,

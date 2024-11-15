@@ -33,7 +33,7 @@ class HiCervix(DatasetBase):
 
         # To take the same percentage of each class (experience 3)
         if self.pourcentage > 0:
-            print('Percentage of the dataset considered :', self.pourcentage)
+            print("Percentage of the dataset considered :", self.pourcentage)
             train = self.generate_pourcent_dataset(train, pourcentage=self.pourcentage)
             val = self.generate_pourcent_dataset(val, pourcentage=self.pourcentage)
         else:
@@ -53,7 +53,7 @@ class HiCervix(DatasetBase):
         elif set == "val":
             df = pd.read_csv(self.val_csv)
 
-        interm = df[df['image_name'] == name]
+        interm = df[df["image_name"] == name]
         class_name = (interm.loc[:, self.level].values)[0]
 
         # Creation of a list of cases considered according to classification level.
@@ -106,8 +106,6 @@ class HiCervix(DatasetBase):
             class_, class_name, impath = self.__getitem__(im_files, i, set)
             if class_name is None or class_name == "" or class_ == -1:
                 continue
-
-            print(class_, class_name, impath)
 
             # Create a Datum object
             datum = Datum(impath=impath, label=class_, classname=class_name)

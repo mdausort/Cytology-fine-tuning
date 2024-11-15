@@ -6,7 +6,6 @@ from tqdm import tqdm
 from utils import get_function
 from torch.utils.data import Dataset
 from transformers.modeling_outputs import ImageClassifierOutput
-from conch.open_clip_custom import tokenize, get_tokenizer
 
 
 class FeaturesDataset(Dataset):
@@ -52,7 +51,7 @@ def generate_few_shot(args, data_loader, val=False):
             + "_"
             + args.model_name
             + "_features_val.npz",
-        )  # +args.shots
+        )
 
     dico_all = []
 
@@ -159,10 +158,7 @@ def textual_extractor(args, dataset, model, tokenizer):
 
         with torch.no_grad():
             with torch.amp.autocast(device_type="cuda", dtype=torch.float16):
-                if args.model_name == "conch":
-                    texts = tokenize(texts=texts, tokenizer=get_tokenizer()).cuda()
-                else:
-                    texts = token(texts).cuda()
+                texts = token(texts).cuda()
                 class_embeddings = text(texts)
         text_features = class_embeddings / class_embeddings.norm(dim=-1, keepdim=True)
         text_features = text_features.cpu().numpy()
