@@ -43,6 +43,8 @@ Authors: **M. Dausort, [T. Godelaine](https://scholar.google.com/citations?user=
      [Download HiCervix](https://zenodo.org/records/11087263)
 
 
+Each dataset must be divided into three folders: train, val and test.
+
 **Important**: All file paths in scripts are set with the placeholder "TO CHANGE". You will need to search for this placeholder in the cloned repository's files and replace it with the appropriate path ```/root/path/``` as specified for your system. In this setup, we have placed the different datasets inside a folder named `./data`.
 
 ## Usage 
