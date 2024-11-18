@@ -24,12 +24,12 @@ shot=${shots[shot_idx]}
 module load devel/python/3.9.13  # TO CHANGE
 source .env/bin/activate  # TO CHANGE
 
-# Classifier line
+# Experience 1: Linear Classifier
 # python3 run.py --seed_launch "$seed" --shots_launch -1 --lr_launch "$lr" --model_launch "$model" --dataset_launch kaggle1 --task_launch classifier
 
-# LoRA line
+# Experience 2: LoRA Few-Shot Adaptation
 # python3 run.py --seed_launch "$seed" --shots_launch "$shot" --lr_launch "$lr" --iterations 100 --model_launch "$model" --dataset_launch kaggle1 --task_launch lora
 # python3 run.py --seed_launch "$seed" --shots_launch "$shot" --lr_launch "$lr" --iterations 100 --model_launch "$model" --dataset_launch hicervix --task_launch lora --level_launch "level_3"
 
-# Percentage analysis
+# Experience 3: Pushing Model Fine-Tuning Limits
 # python3 run.py --seed_launch "$seed" --shots_launch "$shot" --lr_launch "$lr" --iterations 100 --model_launch "$model" --dataset_launch hicervix --level_launch "level_3" --percent_launch 10 --task_launch percentage_lora 
