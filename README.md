@@ -42,21 +42,30 @@ Authors: **M. Dausort, [T. Godelaine](https://scholar.google.com/citations?user=
    - **HiCervix**
      [Download HiCervix](https://zenodo.org/records/11087263)
 
+
 **Important**: All file paths in scripts are set with the placeholder "TO CHANGE". You will need to search for this placeholder in the cloned repository's files and replace it with the appropriate path ```/root/path/``` as specified for your system. In this setup, we have placed the different datasets inside a folder named `./data`.
 
 ## Usage 
 
 To launch the experiments, use the provided `launch_run.sh` bash script:
 
-1. Uncomment line 37. This will activate the necessary configuration for the experiment.
-3. Save the changes.
-4. Use the `launch_run.sh` script to start the experiment.
+1. Open the relevant script and locate the required line for configuration (e.g., line 28 for Experiment 1). Uncomment this line to enable the specific settings needed for the experiment.
+2. Start the experiment by executing the `launch_run.sh` script:
 
-```bash
-sbash launch_run.sh
-```
+   ```bash
+   bash launch_run.sh
+   ```
 
-### Experience 1: Linear Classifier
+3. To visualize the changes and track the experiment's progress, you must integrate your code with Weights & Biases. Add the following line to your script if it's not already included:
+   ```python
+   wandb.init(project='your_project_name')
+   ```
+   You can view the results and metrics of your experiment on [Weights & Biases](https://wandb.ai/site).
+
+4. The results of the experiment are also saved into a JSON file for further analysis or documentation.
+
+
+### Experiment 1: Linear Classifier
 
 ```bash
 python3 main.py --root_path ./data/ \
@@ -68,11 +77,10 @@ python3 main.py --root_path ./data/ \
                 --model_name {model_name} \
                 --num_classes {num_classes} \
                 --level {level} \
-                --backbone {backbone} \
                 --textual False
 ```
 
-### Experience 2: LoRA Few-Shot Adaptation
+### Experiment 2: LoRA Few-Shot Adaptation
 
 ```bash
 python3 main_lora.py --root_path ./data/ \
@@ -83,17 +91,14 @@ python3 main_lora.py --root_path ./data/ \
                      --n_iters 50 \
                      --position "all" \
                      --encoder "vision" \
-                     --pourcentage 0 \
                      --params "q v" \
                      --r 2 \
                      --model_name {model_name} \
                      --num_classes {num_classes} \
                      --level {level} \
-                     --backbone {backbone} \
-                     --dropout_rate 0.25
 ```
 
-### Experience 3: Pushing Model Fine-Tuning Limits
+### Experiment 3: Pushing Model Fine-Tuning Limits
 
 ```bash
 python3 main_lora.py --root_path ./data/ \
@@ -108,13 +113,8 @@ python3 main_lora.py --root_path ./data/ \
                      --params "q k v o" \
                      --r 16 \
                      --model_name clip \
-                     --num_classes 25 \
-                     --level 3 \
-                     --backbone ViT-L/14 \
-                     --dropout_rate 0.25
+                     --level level_3 \
 ```
-
-For the three experiments, the lines used to launch each of them can be found inside the bash file ```launch_run.sh```.  
 
 ## Contact 
 
