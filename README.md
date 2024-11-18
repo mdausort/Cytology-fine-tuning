@@ -42,9 +42,19 @@ Authors: **M. Dausort, [T. Godelaine](https://scholar.google.com/citations?user=
    - **HiCervix**
      [Download HiCervix](https://zenodo.org/records/11087263)
 
-**Important**: All file paths in scripts are set with the placeholder "TO CHANGE". You will need to search for this placeholder in the cloned repository's files and replace it with the appropriate path ```/root/path/``` as specified for your system.
+**Important**: All file paths in scripts are set with the placeholder "TO CHANGE". You will need to search for this placeholder in the cloned repository's files and replace it with the appropriate path ```/root/path/``` as specified for your system. In this setup, we have placed the different datasets inside a folder named `./data`.
 
 ## Usage 
+
+To launch the experiments, use the provided `launch_run.sh` bash script:
+
+1. Uncomment line 37. This will activate the necessary configuration for the experiment.
+3. Save the changes.
+4. Use the `launch_run.sh` script to start the experiment.
+
+```bash
+sbash launch_run.sh
+```
 
 ### Experience 1: Linear Classifier
 
@@ -52,13 +62,9 @@ Authors: **M. Dausort, [T. Godelaine](https://scholar.google.com/citations?user=
 python3 main.py --root_path ./data/ \
                 --dataset {dataset} \
                 --seed {seed} \
-                --shots 0 \
+                --shots -1 \
                 --lr {lr} \
                 --n_iters 50 \
-                --position None \
-                --encoder None \
-                --params None \
-                --r 0 \
                 --model_name {model_name} \
                 --num_classes {num_classes} \
                 --level {level} \
@@ -107,6 +113,8 @@ python3 main_lora.py --root_path ./data/ \
                      --backbone ViT-L/14 \
                      --dropout_rate 0.25
 ```
+
+For the three experiments, the lines used to launch each of them can be found inside the bash file ```launch_run.sh```.  
 
 ## Contact 
 
