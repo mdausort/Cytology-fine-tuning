@@ -4,7 +4,7 @@ Implementation of **"Exploring Foundation Models Fine-Tuning for Cytology Tasks"
 
 In this paper, we explore the application of existing foundation models to cytological classification tasks, focusing on low-rank adaptation (LoRA), a parameter-efficient fine-tuning method well-suited to few-shot learning scenarios. We evaluate five foundation models across four cytological classification datasets. Our results demonstrate that fine-tuning the pre-trained backbones with LoRA significantly enhances model performance compared to merely fine-tuning the classifier head, achieving state-of-the-art results on both simple and complex classification tasks while requiring fewer data samples.
 
-Authors: **M. Dausort, [T. Godelaine](https://scholar.google.com/citations?user=xKcPd0oAAAAJ&hl=en&oi=ao), [M. Zanella](https://scholar.google.com/citations?user=FIoE9YIAAAAJ&hl=fr&oi=ao), [K. El Khoury](https://scholar.google.be/citations?user=UU_keGAAAAAJ&hl=fr), [I. Salmon](https://scholar.google.be/citations?user=S1dmusUAAAAJ&hl=en), [B. Macq](https://scholar.google.be/citations?user=H9pGN70AAAAJ&hl=fr)**
+Authors: **[M. Dausort](https://scholar.google.com/citations?user=hXTkITwAAAAJ&hl=en), [T. Godelaine](https://scholar.google.com/citations?user=xKcPd0oAAAAJ&hl=en&oi=ao), [M. Zanella](https://scholar.google.com/citations?user=FIoE9YIAAAAJ&hl=fr&oi=ao), [K. El Khoury](https://scholar.google.be/citations?user=UU_keGAAAAAJ&hl=fr), [I. Salmon](https://scholar.google.be/citations?user=S1dmusUAAAAJ&hl=en), [B. Macq](https://scholar.google.be/citations?user=H9pGN70AAAAJ&hl=fr)**
 
 **NB:** This GitHub repository is based on the implementation of [CLIP-LoRA](https://github.com/MaxZanella/CLIP-LoRA). 
 
