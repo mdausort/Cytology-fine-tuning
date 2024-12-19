@@ -18,7 +18,7 @@ Authors: **[M. Dausort](https://scholar.google.com/citations?user=hXTkITwAAAAJ&h
 
 **NB:** The Python version used is 3.9.13.
 
-1. Create a virtual environment, clone the GitHub repository, and install the required packages:
+1. Create a virtual environment, clone the GitHub repository, and install the required packages: 
    ```bash
    python3 -m venv cyto_ft_venv
    source cyto_ft_venv/bin/activate
