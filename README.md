@@ -1,4 +1,4 @@
-# Exploring Foundation Models Fine-Tuning for Cytology Tasks [Submitted to ISBI25]
+# Exploring Foundation Models Fine-Tuning for Cytology Tasks [Accepted to ISBI25]
 
 Implementation of **"Exploring Foundation Models Fine-Tuning for Cytology Tasks"**.
 
