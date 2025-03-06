@@ -11,7 +11,7 @@ from .oxford_pets import OxfordPets
 from .dtd import DescribableTextures
 from .stanford_cars import StanfordCars
 from .oxford_flowers import OxfordFlowers
-from .dataset_kaggle import MLCC, Dataset_kaggle2
+from .dataset_kaggle import MLCC, BCFC
 
 
 dataset_list = {
@@ -28,7 +28,7 @@ dataset_list = {
     "imagenet": ImageNet,
     "sipakmed": SipakMed,
     "mlcc": MLCC,
-    "kaggle2": Dataset_kaggle2,
+    "bcfc": BCFC,
     "hicervix": HiCervix
 }
 
