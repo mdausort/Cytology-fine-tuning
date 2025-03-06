@@ -49,10 +49,7 @@ if __name__ == "__main__":
             "kaggle1",
             "kaggle2",
             "sipakmed",
-            "hicervix",
-            "cu_us1",
-            "cu_us2",
-            "cu_us3",
+            "hicervix"
         ],
     )
     parser.add_argument(
@@ -106,18 +103,6 @@ if __name__ == "__main__":
     elif dataset == "sipakmed":
         num_classes = 5
         root_path = "path_of_dataset"  # TO CHANGE
-
-    elif dataset == "cu_us1":  # TO CHANGE
-        num_classes = 2
-        root_path = "/CECI/proj/medresyst/manon/"  # TO CHANGE
-
-    elif dataset == "cu_us2":  # TO CHANGE
-        num_classes = 3
-        root_path = "/CECI/proj/medresyst/manon/"  # TO CHANGE
-
-    elif dataset == "cu_us3":  # TO CHANGE
-        num_classes = 5
-        root_path = "/CECI/proj/medresyst/manon/"  # TO CHANGE
 
     elif dataset == "hicervix":
         df = pd.read_csv("path_of_dataset")  # TO CHANGE
