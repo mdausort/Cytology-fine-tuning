@@ -2,7 +2,7 @@ import os
 import torch
 import numpy as np
 from tqdm import tqdm
-from utils import get_function  # type: ignore
+from utils import get_function
 from torch.utils.data import Dataset
 from transformers.modeling_outputs import ImageClassifierOutput
 
