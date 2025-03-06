@@ -3,7 +3,7 @@ import torch
 import argparse
 import numpy as np
 import pandas as pd
-from datasets import build_dataset  # type: ignore
+from datasets import build_dataset
 
 
 if __name__ == "__main__":
