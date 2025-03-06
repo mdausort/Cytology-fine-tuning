@@ -1,18 +1,17 @@
-from .ucf101 import UCF101  # type: ignore
-from .sun397 import SUN397  # type: ignore
-from .eurosat import EuroSAT  # type: ignore
-from .food101 import Food101  # type: ignore
-from .imagenet import ImageNet  # type: ignore
-from .sipakmed import SipakMed  # type: ignore
-from .fgvc import FGVCAircraft  # type: ignore
-from .hicervix import HiCervix  # type: ignore
-from .caltech101 import Caltech101  # type: ignore
-from .oxford_pets import OxfordPets  # type: ignore
-from .dtd import DescribableTextures  # type: ignore
-from .stanford_cars import StanfordCars  # type: ignore
-from .oxford_flowers import OxfordFlowers  # type: ignore
-from .dataset_kaggle import Dataset_kaggle1, Dataset_kaggle2  # type: ignore
-from .cu_us import USDataset_C1, USDataset_C2, USDataset_C3  # type: ignore
+from .ucf101 import UCF101
+from .sun397 import SUN397
+from .eurosat import EuroSAT
+from .food101 import Food101
+from .imagenet import ImageNet
+from .sipakmed import SipakMed
+from .fgvc import FGVCAircraft
+from .hicervix import HiCervix
+from .caltech101 import Caltech101
+from .oxford_pets import OxfordPets
+from .dtd import DescribableTextures
+from .stanford_cars import StanfordCars
+from .oxford_flowers import OxfordFlowers
+from .dataset_kaggle import Dataset_kaggle1, Dataset_kaggle2
 
 
 dataset_list = {
@@ -30,10 +29,7 @@ dataset_list = {
     "sipakmed": SipakMed,
     "kaggle1": Dataset_kaggle1,
     "kaggle2": Dataset_kaggle2,
-    "hicervix": HiCervix,
-    "cu_us1": USDataset_C1,
-    "cu_us2": USDataset_C2,
-    "cu_us3": USDataset_C3,
+    "hicervix": HiCervix
 }
 
 
