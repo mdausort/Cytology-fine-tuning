@@ -7,9 +7,9 @@ from .utils import Datum, DatasetBase  # type: ignore
 template = ["A pap smear slide showing a {} cervical cells."]
 
 
-class Dataset_kaggle1(DatasetBase):
+class MLCC(DatasetBase):
 
-    dataset_dir = "Dataset_kaggle1"
+    dataset_dir = "MLCC"
     classes = [
         "HSIL",
         "LSIL",
@@ -58,9 +58,9 @@ class Dataset_kaggle1(DatasetBase):
         return datum_list
 
 
-class Dataset_kaggle2(DatasetBase):
+class BCFC(DatasetBase):
 
-    dataset_dir = "Dataset_kaggle2"
+    dataset_dir = "BCFC"
     classes = [
         "malignant",
         "benign",
