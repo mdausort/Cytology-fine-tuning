@@ -1,6 +1,6 @@
 import os
 import json
-import gdown  # type: ignore
+import gdown
 import torch
 import random
 import tarfile
