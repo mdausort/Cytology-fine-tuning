@@ -1,6 +1,6 @@
 import os
 import timm
-import clip  # type: ignore
+import clip
 import torch
 import open_clip
 from datasets import build_dataset  # type: ignore
