@@ -1,15 +1,14 @@
 import os
-import wandb  # type: ignore
 import json
 import torch
 import numpy as np
 import torch.nn as nn
 from tqdm import tqdm
-from utils import cls_acc  # type: ignore
-import pytorch_warmup as warmup  # type: ignore
+from utils import cls_acc
+import pytorch_warmup as warmup
 import torch.nn.functional as F
 from transformers.modeling_outputs import ImageClassifierOutput
-from loralib.utils import (  # type: ignore
+from loralib.utils import (
     mark_only_lora_as_trainable,
     apply_lora,
     get_lora_parameters,
@@ -85,27 +84,6 @@ def run_uni(args, clip_model, logit_scale, train_loader, val_loader, test_loader
     """Classifier experiment - backbone freezed and classification layer added on the top of it"""
 
     VALIDATION = True
-    WANDB = True
-
-    if WANDB:
-        name_run = f"{args.model_name}_{args.lr}_{args.seed}_{args.n_iters}_{str(args.textual)}_{args.encoder}"
-        wandb.init(project="us_cu_classif_" + str(args.dataset), name=name_run)
-        config = wandb.config
-        config.model_name = args.model_name
-        config.lr = args.lr
-        config.rank = args.r
-        config.seed = args.seed
-        config.n_iters = args.n_iters
-        config.position = args.position
-        config.encoder = args.encoder
-        config.params = args.params
-        config.dataset = args.dataset
-        config.weight_decay = 1e-2
-        config.beta1 = 0.9
-        config.beta2 = 0.999
-        config.textual = args.textual
-        config.logit_scale = logit_scale
-        config.batch_size = args.batch_size
 
     if args.model_name in ["vit_google"]:
         num_features = 768
@@ -265,30 +243,7 @@ def evaluate_lora_uni(args, clip_model, loader):
 def run_uni_lora(args, clip_model, logit_scale, train_loader, val_loader, test_loader):
 
     VALIDATION = True
-    WANDB = True
     acc_val = 0.0
-
-    if WANDB:
-        name_run = f"{args.model_name}_{args.lr}_{args.r}_{args.seed}_{args.shots}_{args.n_iters}_{args.position}_{args.encoder}"
-        wandb.init(
-            project="cu_us_lora_" + str(args.dataset) + "_" + str(args.shots), name=name_run
-        )
-        config = wandb.config
-        config.model_name = args.model_name
-        config.lr = args.lr
-        config.rank = args.r
-        config.seed = args.seed
-        config.shots = args.shots
-        config.n_iters = args.n_iters
-        config.position = args.position
-        config.encoder = args.encoder
-        config.params = args.params
-        config.dataset = args.dataset
-        config.weight_decay = 1e-2
-        config.beta1 = 0.9
-        config.beta2 = 0.999
-        config.logit_scale = logit_scale
-        config.batch_size = args.batch_size
 
     if args.model_name in ["vit_google"]:
         num_features = 768
@@ -398,11 +353,6 @@ def run_uni_lora(args, clip_model, logit_scale, train_loader, val_loader, test_l
             acc_val, loss_val = evaluate_lora_uni(args, clip_model_, val_loader)
             print("**** Val accuracy: {:.2f}. ****\n".format(acc_val))
 
-        if WANDB:
-            wandb.log({"train/loss": loss_epoch, "train/accuracy": acc_train})
-            if VALIDATION:
-                wandb.log({"val/loss": loss_val, "val/accuracy": acc_val})
-
     acc_test, _ = evaluate_lora_uni(args, clip_model_, test_loader)
     print("**** Final test accuracy: {:.2f}. ****\n".format(acc_test))
 
@@ -439,12 +389,6 @@ def run_uni_lora(args, clip_model, logit_scale, train_loader, val_loader, test_l
 
     args.save_path = json_path.replace(".json", ".pt")
     save_lora(args, list_lora_layers)
-
-    if WANDB:
-        wandb.log({"test/accuracy": acc_test})
-
-    if WANDB:
-        wandb.finish()
 
     return
 
