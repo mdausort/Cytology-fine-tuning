@@ -43,11 +43,11 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset_launch",
         type=str,
-        default="kaggle1",
+        default="mlcc",
         help="Name of the dataset used",
         choices=[
-            "kaggle1",
-            "kaggle2",
+            "mlcc",
+            "bcfc",
             "sipakmed",
             "hicervix"
         ],
@@ -92,11 +92,11 @@ if __name__ == "__main__":
 
     task = args.task_launch
 
-    if dataset == "kaggle1":
+    if dataset == "mlcc":
         num_classes = 4
         root_path = "path_of_dataset"  # TO CHANGE
 
-    elif dataset == "kaggle2":
+    elif dataset == "bcfc":
         num_classes = 2
         root_path = "path_of_dataset"  # TO CHANGE
 
