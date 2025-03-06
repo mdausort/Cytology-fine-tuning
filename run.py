@@ -23,7 +23,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--rank_launch",
         type=int,
-        default=2,
+        default=8,
         help="Rank of matrices on which LoRA will be applied",
     )
 
@@ -45,7 +45,15 @@ if __name__ == "__main__":
         type=str,
         default="kaggle1",
         help="Name of the dataset used",
-        choices=["kaggle1", "kaggle2", "sipakmed", "hicervix"],
+        choices=[
+            "kaggle1",
+            "kaggle2",
+            "sipakmed",
+            "hicervix",
+            "cu_us1",
+            "cu_us2",
+            "cu_us3",
+        ],
     )
     parser.add_argument(
         "--level_launch",
@@ -99,10 +107,20 @@ if __name__ == "__main__":
         num_classes = 5
         root_path = "path_of_dataset"  # TO CHANGE
 
+    elif dataset == "cu_us1":  # TO CHANGE
+        num_classes = 2
+        root_path = "/CECI/proj/medresyst/manon/"  # TO CHANGE
+
+    elif dataset == "cu_us2":  # TO CHANGE
+        num_classes = 3
+        root_path = "/CECI/proj/medresyst/manon/"  # TO CHANGE
+
+    elif dataset == "cu_us3":  # TO CHANGE
+        num_classes = 5
+        root_path = "/CECI/proj/medresyst/manon/"  # TO CHANGE
+
     elif dataset == "hicervix":
-        df = pd.read_csv(
-            "path_of_dataset"  # TO CHANGE
-        )
+        df = pd.read_csv("path_of_dataset")  # TO CHANGE
 
         if level == "level_3":
             class_list_2 = sorted(np.unique(df.loc[:, "level_2"].dropna().tolist()))

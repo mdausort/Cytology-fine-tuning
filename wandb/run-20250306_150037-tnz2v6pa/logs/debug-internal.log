@@ -1,0 +1,16 @@
+{"time":"2025-03-06T15:00:38.368712192+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250306_150037-tnz2v6pa/logs/debug-core.log"}
+{"time":"2025-03-06T15:00:38.474605484+01:00","level":"INFO","msg":"created new stream","id":"tnz2v6pa"}
+{"time":"2025-03-06T15:00:38.474625214+01:00","level":"INFO","msg":"stream: started","id":"tnz2v6pa"}
+{"time":"2025-03-06T15:00:38.474656655+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"tnz2v6pa"}
+{"time":"2025-03-06T15:00:38.474668195+01:00","level":"INFO","msg":"sender: started","stream_id":"tnz2v6pa"}
+{"time":"2025-03-06T15:00:38.474677135+01:00","level":"INFO","msg":"handler: started","stream_id":"tnz2v6pa"}
+{"time":"2025-03-06T15:00:38.796484198+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-06T15:15:02.464765404+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-06T15:15:02.470228244+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-06T15:15:03.465150419+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.656533461,"progress":"228B/228B"},{"desc":"uploading config.yaml","runtime_seconds":0.485679703,"progress":"1.2KB/1.2KB"}],"total_operations":2}}
+{"time":"2025-03-06T15:15:03.51640715+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-06T15:15:04.711018573+01:00","level":"INFO","msg":"stream: closing","id":"tnz2v6pa"}
+{"time":"2025-03-06T15:15:04.711040413+01:00","level":"INFO","msg":"handler: closed","stream_id":"tnz2v6pa"}
+{"time":"2025-03-06T15:15:04.711049353+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"tnz2v6pa"}
+{"time":"2025-03-06T15:15:04.711091614+01:00","level":"INFO","msg":"sender: closed","stream_id":"tnz2v6pa"}
+{"time":"2025-03-06T15:15:04.711871208+01:00","level":"INFO","msg":"stream: closed","id":"tnz2v6pa"}

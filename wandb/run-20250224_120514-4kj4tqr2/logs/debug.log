@@ -1,0 +1,53 @@
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_setup.py:_flush():68] Current SDK version is 0.19.6
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_setup.py:_flush():68] Configure stats pid to 1117085
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_setup.py:_flush():68] Loading settings from /home/ucl/elen/mdausort/.config/wandb/settings
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_setup.py:_flush():68] Loading settings from /CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/settings
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_init.py:setup_run_log_directory():637] Logging user logs to /CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250224_120514-4kj4tqr2/logs/debug.log
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_init.py:setup_run_log_directory():638] Logging internal logs to /CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250224_120514-4kj4tqr2/logs/debug-internal.log
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_init.py:init():756] calling init triggers
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_init.py:init():761] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-02-24 12:05:14,022 INFO    MainThread:1117085 [wandb_init.py:init():789] starting backend
+2025-02-24 12:05:14,368 INFO    MainThread:1117085 [wandb_init.py:init():793] sending inform_init request
+2025-02-24 12:05:14,391 INFO    MainThread:1117085 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-02-24 12:05:14,391 INFO    MainThread:1117085 [wandb_init.py:init():808] backend started and connected
+2025-02-24 12:05:14,392 INFO    MainThread:1117085 [wandb_init.py:init():901] updated telemetry
+2025-02-24 12:05:14,443 INFO    MainThread:1117085 [wandb_init.py:init():936] communicating run to backend with 90.0 second timeout
+2025-02-24 12:05:14,744 INFO    MainThread:1117085 [wandb_init.py:init():994] starting run threads in backend
+2025-02-24 12:05:15,214 INFO    MainThread:1117085 [wandb_run.py:_console_start():2385] atexit reg
+2025-02-24 12:05:15,215 INFO    MainThread:1117085 [wandb_run.py:_redirect():2235] redirect: wrap_raw
+2025-02-24 12:05:15,215 INFO    MainThread:1117085 [wandb_run.py:_redirect():2300] Wrapping output streams.
+2025-02-24 12:05:15,215 INFO    MainThread:1117085 [wandb_run.py:_redirect():2325] Redirects installed.
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_init.py:init():1036] run started, returning control to user process
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set model_name = vit_google - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb model_name vit_google None
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set lr = 0.003 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb lr 0.003 None
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set rank = 2 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb rank 2 None
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set seed = 3 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb seed 3 None
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set shots = 4 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb shots 4 None
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set n_iters = 100 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb n_iters 100 None
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set position = all - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,257 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb position all None
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set encoder = vision - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb encoder vision None
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set params = ['q', 'v'] - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb params ['q', 'v'] None
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set dataset = cu_us1 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb dataset cu_us1 None
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set weight_decay = 0.01 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb weight_decay 0.01 None
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set beta1 = 0.9 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb beta1 0.9 None
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set beta2 = 0.999 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb beta2 0.999 None
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set logit_scale = 100 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb logit_scale 100 None
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_config.py:__setitem__():154] config set batch_size = 32 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7f1b2f49a080>>
+2025-02-24 12:05:15,258 INFO    MainThread:1117085 [wandb_run.py:_config_callback():1253] config_cb batch_size 32 None
+2025-02-24 12:05:16,365 WARNING MsgRouterThr:1117085 [router.py:message_loop():75] message_loop has been closed

@@ -1,0 +1,16 @@
+{"time":"2025-02-24T12:28:48.925675413+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250224_122848-172cq3bs/logs/debug-core.log"}
+{"time":"2025-02-24T12:28:49.033149209+01:00","level":"INFO","msg":"created new stream","id":"172cq3bs"}
+{"time":"2025-02-24T12:28:49.033175084+01:00","level":"INFO","msg":"stream: started","id":"172cq3bs"}
+{"time":"2025-02-24T12:28:49.033184827+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"172cq3bs"}
+{"time":"2025-02-24T12:28:49.033191994+01:00","level":"INFO","msg":"handler: started","stream_id":"172cq3bs"}
+{"time":"2025-02-24T12:28:49.03320695+01:00","level":"INFO","msg":"sender: started","stream_id":"172cq3bs"}
+{"time":"2025-02-24T12:28:49.231809728+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-24T12:46:01.890169975+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-24T12:46:01.89116113+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-24T12:46:02.890765897+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.680495022,"progress":"634.2KB/634.2KB"},{"desc":"uploading config.yaml","runtime_seconds":0.058862542,"progress":"1.2KB/1.2KB"}],"total_operations":2}}
+{"time":"2025-02-24T12:46:03.177595031+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-24T12:46:04.375381178+01:00","level":"INFO","msg":"stream: closing","id":"172cq3bs"}
+{"time":"2025-02-24T12:46:04.375408313+01:00","level":"INFO","msg":"handler: closed","stream_id":"172cq3bs"}
+{"time":"2025-02-24T12:46:04.375420939+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"172cq3bs"}
+{"time":"2025-02-24T12:46:04.375445899+01:00","level":"INFO","msg":"sender: closed","stream_id":"172cq3bs"}
+{"time":"2025-02-24T12:46:04.376132848+01:00","level":"INFO","msg":"stream: closed","id":"172cq3bs"}

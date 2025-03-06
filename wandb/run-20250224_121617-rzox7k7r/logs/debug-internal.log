@@ -1,0 +1,15 @@
+{"time":"2025-02-24T12:16:18.156691233+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250224_121617-rzox7k7r/logs/debug-core.log"}
+{"time":"2025-02-24T12:16:18.262934797+01:00","level":"INFO","msg":"created new stream","id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:18.262951729+01:00","level":"INFO","msg":"stream: started","id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:18.262959941+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:18.262965856+01:00","level":"INFO","msg":"handler: started","stream_id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:18.263567893+01:00","level":"INFO","msg":"sender: started","stream_id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:18.459895421+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-24T12:16:21.846990631+01:00","level":"INFO","msg":"stream: closing","id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:21.847011406+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-24T12:16:21.847461705+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-24T12:16:22.425845749+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-24T12:16:22.593848931+01:00","level":"INFO","msg":"handler: closed","stream_id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:22.593868209+01:00","level":"INFO","msg":"sender: closed","stream_id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:22.593864384+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"rzox7k7r"}
+{"time":"2025-02-24T12:16:22.594319298+01:00","level":"INFO","msg":"stream: closed","id":"rzox7k7r"}

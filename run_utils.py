@@ -28,7 +28,7 @@ def get_arguments():
         type=str,
         default="kaggle1",
         help="Name of the dataset used",
-        choices=["kaggle1", "kaggle2", "sipakmed", "hicervix"],
+        choices=["kaggle1", "kaggle2", "sipakmed", "hicervix", "cu_us1", "cu_us2", "cu_us3"],
     )
     parser.add_argument("--shots", type=int, default=16, help="Shot number")
     parser.add_argument(

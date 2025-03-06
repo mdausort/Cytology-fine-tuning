@@ -1,0 +1,15 @@
+{"time":"2025-02-24T12:58:59.230964467+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250224_125859-kwpmc35c/logs/debug-core.log"}
+{"time":"2025-02-24T12:58:59.336570897+01:00","level":"INFO","msg":"created new stream","id":"kwpmc35c"}
+{"time":"2025-02-24T12:58:59.336590053+01:00","level":"INFO","msg":"stream: started","id":"kwpmc35c"}
+{"time":"2025-02-24T12:58:59.336596561+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"kwpmc35c"}
+{"time":"2025-02-24T12:58:59.336608892+01:00","level":"INFO","msg":"handler: started","stream_id":"kwpmc35c"}
+{"time":"2025-02-24T12:58:59.33660818+01:00","level":"INFO","msg":"sender: started","stream_id":"kwpmc35c"}
+{"time":"2025-02-24T12:58:59.575968912+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-24T12:59:01.679334947+01:00","level":"INFO","msg":"stream: closing","id":"kwpmc35c"}
+{"time":"2025-02-24T12:59:01.679360695+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-24T12:59:01.6798087+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-24T12:59:02.310213437+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-24T12:59:02.485280061+01:00","level":"INFO","msg":"handler: closed","stream_id":"kwpmc35c"}
+{"time":"2025-02-24T12:59:02.485297881+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"kwpmc35c"}
+{"time":"2025-02-24T12:59:02.485314602+01:00","level":"INFO","msg":"sender: closed","stream_id":"kwpmc35c"}
+{"time":"2025-02-24T12:59:02.485694752+01:00","level":"INFO","msg":"stream: closed","id":"kwpmc35c"}

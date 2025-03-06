@@ -1,0 +1,86 @@
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 22.70it/s]
+ OptLR: 0.000080, LR: 0.001000, Acc: 35.3659, Loss: 1.0837
+**** Val accuracy: 33.33. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.11it/s]
+
+ OptLR: 0.000140, LR: 0.001000, Acc: 35.3659, Loss: 1.0232
+**** Val accuracy: 33.33. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 27.64it/s]
+
+ OptLR: 0.000200, LR: 0.001000, Acc: 36.5854, Loss: 0.9256
+**** Val accuracy: 33.33. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.42it/s]
+
+ OptLR: 0.000260, LR: 0.001000, Acc: 37.8049, Loss: 0.8065
+**** Val accuracy: 33.33. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 25.77it/s]
+
+ OptLR: 0.000320, LR: 0.001000, Acc: 54.8780, Loss: 0.7021
+**** Val accuracy: 50.00. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.66it/s]
+
+ OptLR: 0.000380, LR: 0.001000, Acc: 64.6341, Loss: 0.6642
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.63it/s]
+
+ OptLR: 0.000440, LR: 0.001000, Acc: 65.8537, Loss: 0.6833
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.69it/s]
+
+ OptLR: 0.000500, LR: 0.001000, Acc: 64.6341, Loss: 0.7146
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 28.36it/s]
+
+ OptLR: 0.000560, LR: 0.001000, Acc: 64.6341, Loss: 0.7129
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.88it/s]
+
+ OptLR: 0.000620, LR: 0.001000, Acc: 64.6341, Loss: 0.6767
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.68it/s]
+
+ OptLR: 0.000680, LR: 0.001000, Acc: 65.8537, Loss: 0.6207
+**** Val accuracy: 50.00. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.52it/s]
+
+ OptLR: 0.000740, LR: 0.001000, Acc: 69.5122, Loss: 0.5904
+**** Val accuracy: 58.33. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.17it/s]
+
+ OptLR: 0.000800, LR: 0.001000, Acc: 74.3902, Loss: 0.5895
+**** Val accuracy: 41.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.44it/s]
+
+ OptLR: 0.000860, LR: 0.001000, Acc: 75.6098, Loss: 0.5847
+Exception ignored in: <function _releaseLock at 0x7f10d04d5120>
+Traceback (most recent call last):
+  File "/opt/sw/arch/easybuild/2022b/software/Python/3.10.8-GCCcore-12.2.0/lib/python3.10/logging/__init__.py", line 228, in _releaseLock
+    def _releaseLock():
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/opt/sw/arch/easybuild/2022b/software/Python/3.10.8-GCCcore-12.2.0/lib/python3.10/queue.py", line 179, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/main.py", line 311, in <module>
+    main()
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/main.py", line 292, in main
+    run_uni(args, model_clip, logit_scale, train_loader, val_loader, test_loader)
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/lora.py", line 202, in run_uni
+    acc_val, loss_val = evaluate_uni(args, clip_model_, val_loader)
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/lora.py", line 67, in evaluate_uni
+    for i, (images, target) in enumerate(loader):
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1284, in _get_data
+    success, data = self._try_get_data()
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1145, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 1205603, 1205604) exited unexpectedly

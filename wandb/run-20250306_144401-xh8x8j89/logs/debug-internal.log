@@ -1,0 +1,16 @@
+{"time":"2025-03-06T14:44:02.056328253+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250306_144401-xh8x8j89/logs/debug-core.log"}
+{"time":"2025-03-06T14:44:02.188408559+01:00","level":"INFO","msg":"created new stream","id":"xh8x8j89"}
+{"time":"2025-03-06T14:44:02.188431585+01:00","level":"INFO","msg":"stream: started","id":"xh8x8j89"}
+{"time":"2025-03-06T14:44:02.188440092+01:00","level":"INFO","msg":"handler: started","stream_id":"xh8x8j89"}
+{"time":"2025-03-06T14:44:02.188451835+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"xh8x8j89"}
+{"time":"2025-03-06T14:44:02.18912741+01:00","level":"INFO","msg":"sender: started","stream_id":"xh8x8j89"}
+{"time":"2025-03-06T14:44:02.418051011+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-06T15:26:41.774758761+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-06T15:26:41.780365035+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-06T15:26:42.775347225+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.661079556,"progress":"289.8KB/289.8KB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.661066181,"progress":"229B/229B"},{"desc":"uploading config.yaml","runtime_seconds":0.487864896,"progress":"1.2KB/1.2KB"}],"total_operations":3}}
+{"time":"2025-03-06T15:26:43.19496064+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-06T15:26:44.391321969+01:00","level":"INFO","msg":"stream: closing","id":"xh8x8j89"}
+{"time":"2025-03-06T15:26:44.391335264+01:00","level":"INFO","msg":"handler: closed","stream_id":"xh8x8j89"}
+{"time":"2025-03-06T15:26:44.391340746+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"xh8x8j89"}
+{"time":"2025-03-06T15:26:44.391353797+01:00","level":"INFO","msg":"sender: closed","stream_id":"xh8x8j89"}
+{"time":"2025-03-06T15:26:44.392308895+01:00","level":"INFO","msg":"stream: closed","id":"xh8x8j89"}

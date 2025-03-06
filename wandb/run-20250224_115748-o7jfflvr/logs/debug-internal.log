@@ -1,0 +1,15 @@
+{"time":"2025-02-24T11:57:48.477625683+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250224_115748-o7jfflvr/logs/debug-core.log"}
+{"time":"2025-02-24T11:57:48.585637841+01:00","level":"INFO","msg":"created new stream","id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:48.585658396+01:00","level":"INFO","msg":"stream: started","id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:48.585667623+01:00","level":"INFO","msg":"handler: started","stream_id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:48.585674803+01:00","level":"INFO","msg":"sender: started","stream_id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:48.585690404+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:48.843460693+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-24T11:57:50.748965466+01:00","level":"INFO","msg":"stream: closing","id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:50.748983417+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-24T11:57:50.749400718+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-24T11:57:51.341795513+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-24T11:57:51.598330005+01:00","level":"INFO","msg":"handler: closed","stream_id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:51.598352759+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:51.598391631+01:00","level":"INFO","msg":"sender: closed","stream_id":"o7jfflvr"}
+{"time":"2025-02-24T11:57:51.598979614+01:00","level":"INFO","msg":"stream: closed","id":"o7jfflvr"}

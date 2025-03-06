@@ -1,0 +1,16 @@
+{"time":"2025-03-06T14:44:02.145256096+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250306_144401-yw7syisx/logs/debug-core.log"}
+{"time":"2025-03-06T14:44:02.353180178+01:00","level":"INFO","msg":"created new stream","id":"yw7syisx"}
+{"time":"2025-03-06T14:44:02.353200748+01:00","level":"INFO","msg":"stream: started","id":"yw7syisx"}
+{"time":"2025-03-06T14:44:02.353221948+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"yw7syisx"}
+{"time":"2025-03-06T14:44:02.353233099+01:00","level":"INFO","msg":"handler: started","stream_id":"yw7syisx"}
+{"time":"2025-03-06T14:44:02.353654966+01:00","level":"INFO","msg":"sender: started","stream_id":"yw7syisx"}
+{"time":"2025-03-06T14:44:02.579095962+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-06T14:59:24.820808007+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-06T14:59:24.83002572+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-06T14:59:25.821146367+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.641392632,"progress":"291.4KB/291.4KB"},{"desc":"uploading config.yaml","runtime_seconds":0.459243081,"progress":"1.2KB/1.2KB"}],"total_operations":2}}
+{"time":"2025-03-06T14:59:26.237894691+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-06T14:59:27.451900407+01:00","level":"INFO","msg":"stream: closing","id":"yw7syisx"}
+{"time":"2025-03-06T14:59:27.451931928+01:00","level":"INFO","msg":"handler: closed","stream_id":"yw7syisx"}
+{"time":"2025-03-06T14:59:27.451953678+01:00","level":"INFO","msg":"sender: closed","stream_id":"yw7syisx"}
+{"time":"2025-03-06T14:59:27.451946508+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"yw7syisx"}
+{"time":"2025-03-06T14:59:27.452447277+01:00","level":"INFO","msg":"stream: closed","id":"yw7syisx"}

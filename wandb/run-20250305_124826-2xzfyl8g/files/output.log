@@ -1,0 +1,54 @@
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 24.35it/s]
+ OptLR: 0.000080, LR: 0.001000, Acc: 64.6341, Loss: 0.6623
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 28.70it/s]
+
+ OptLR: 0.000140, LR: 0.001000, Acc: 64.6341, Loss: 0.6592
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 28.85it/s]
+
+ OptLR: 0.000200, LR: 0.001000, Acc: 64.6341, Loss: 0.6554
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 28.25it/s]
+
+ OptLR: 0.000260, LR: 0.001000, Acc: 64.6341, Loss: 0.6513
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 28.47it/s]
+
+ OptLR: 0.000320, LR: 0.001000, Acc: 64.6341, Loss: 0.6472
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 28.03it/s]
+
+ OptLR: 0.000380, LR: 0.001000, Acc: 64.6341, Loss: 0.6485
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.33it/s]
+
+ OptLR: 0.000440, LR: 0.001000, Acc: 64.6341, Loss: 0.6462
+**** Val accuracy: 66.67. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 26.95it/s]
+
+ OptLR: 0.000500, LR: 0.001000, Acc: 64.6341, Loss: 0.6450
+**** Val accuracy: 66.67. ****
+  0%|                                                                                                                                         | 0/3 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/main.py", line 368, in <module>
+    main()
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/main.py", line 349, in main
+    run_uni(args, model_clip, logit_scale, train_loader, val_loader, test_loader)
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/lora.py", line 162, in run_uni
+    for i, (images, target) in enumerate(tqdm(train_loader)):
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1284, in _get_data
+    success, data = self._try_get_data()
+  File "/CECI/proj/medresyst/histo_cyto/env/tim/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/opt/sw/arch/easybuild/2022b/software/Python/3.10.8-GCCcore-12.2.0/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/opt/sw/arch/easybuild/2022b/software/Python/3.10.8-GCCcore-12.2.0/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

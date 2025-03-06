@@ -1,0 +1,16 @@
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 25.62it/s]
+ OptLR: 0.000080, LR: 0.001000, Acc: 54.8780, Loss: 0.9819
+**** Val accuracy: 58.33. ****
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00, 29.57it/s]
+
+ OptLR: 0.000140, LR: 0.001000, Acc: 51.2195, Loss: 0.9445
+**** Val accuracy: 58.33. ****
+  0%|                                                                                                                                         | 0/3 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/main.py", line 368, in <module>
+    main()
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/main.py", line 349, in main
+    run_uni(args, model_clip, logit_scale, train_loader, val_loader, test_loader)
+  File "/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/lora.py", line 164, in run_uni
+    images, target = images.cuda(), target.cuda()
+KeyboardInterrupt

@@ -1,0 +1,16 @@
+{"time":"2025-03-06T14:44:02.150137969+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250306_144401-qauinezb/logs/debug-core.log"}
+{"time":"2025-03-06T14:44:02.267748692+01:00","level":"INFO","msg":"created new stream","id":"qauinezb"}
+{"time":"2025-03-06T14:44:02.267776769+01:00","level":"INFO","msg":"stream: started","id":"qauinezb"}
+{"time":"2025-03-06T14:44:02.267783503+01:00","level":"INFO","msg":"handler: started","stream_id":"qauinezb"}
+{"time":"2025-03-06T14:44:02.267834303+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"qauinezb"}
+{"time":"2025-03-06T14:44:02.270056734+01:00","level":"INFO","msg":"sender: started","stream_id":"qauinezb"}
+{"time":"2025-03-06T14:44:02.535901277+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-06T15:08:11.933581627+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-06T15:08:11.939710406+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-06T15:08:12.934162648+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.478928119,"progress":"1.2KB/1.2KB"}],"total_operations":1}}
+{"time":"2025-03-06T15:08:13.015657272+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-06T15:08:14.224436108+01:00","level":"INFO","msg":"stream: closing","id":"qauinezb"}
+{"time":"2025-03-06T15:08:14.224452179+01:00","level":"INFO","msg":"handler: closed","stream_id":"qauinezb"}
+{"time":"2025-03-06T15:08:14.224458821+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"qauinezb"}
+{"time":"2025-03-06T15:08:14.22452555+01:00","level":"INFO","msg":"sender: closed","stream_id":"qauinezb"}
+{"time":"2025-03-06T15:08:14.225487415+01:00","level":"INFO","msg":"stream: closed","id":"qauinezb"}

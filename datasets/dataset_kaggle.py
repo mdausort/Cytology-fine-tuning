@@ -1,7 +1,8 @@
+import os
 import cv2
 import glob
-import os
-from .utils import Datum, DatasetBase
+
+from .utils import Datum, DatasetBase  # type: ignore
 
 template = ["A pap smear slide showing a {} cervical cells."]
 

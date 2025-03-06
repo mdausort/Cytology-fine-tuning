@@ -1,4 +1,4 @@
-import clip
+import clip  # type: ignore
 import torch
 from tqdm import tqdm
 

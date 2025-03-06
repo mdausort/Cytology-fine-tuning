@@ -1,0 +1,7 @@
+{"time":"2025-03-06T15:52:24.67173416+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.6","symlink path":"/CECI/proj/medresyst/manon/US/codes/Cytology-fine-tuning/wandb/run-20250306_155224-qewehg9e/logs/debug-core.log"}
+{"time":"2025-03-06T15:52:24.778115699+01:00","level":"INFO","msg":"created new stream","id":"qewehg9e"}
+{"time":"2025-03-06T15:52:24.778135215+01:00","level":"INFO","msg":"stream: started","id":"qewehg9e"}
+{"time":"2025-03-06T15:52:24.778150383+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"qewehg9e"}
+{"time":"2025-03-06T15:52:24.778173296+01:00","level":"INFO","msg":"handler: started","stream_id":"qewehg9e"}
+{"time":"2025-03-06T15:52:24.778187973+01:00","level":"INFO","msg":"sender: started","stream_id":"qewehg9e"}
+{"time":"2025-03-06T15:52:25.027628332+01:00","level":"INFO","msg":"Starting system monitor"}
