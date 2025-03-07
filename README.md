@@ -76,6 +76,6 @@ To launch the experiments, use the provided `launch_run.sh` bash script:
 | **Advanced LoRA**      | `python3 run.py --root_path ./data/ --dataset hicervix --seed {seed} --shots 0 --lr 1e-3 --n_iters 100 --position "all" --encoder "vision" --pourcentage {pourcentage} --params "q k v o" --r 16 --model_name clip --level level_3 --task percentage_lora` |
 
 
-## 📩 Contact 
+## Contact 
 
 If you have any questions, you can contact us by email: [manon.dausort@uclouvain.be](mailto\:manon.dausort@uclouvain.be), [tiffanie.godelaine@uclouvain.be](mailto\:tiffanie.godelaine@uclouvain.be)
